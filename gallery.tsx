@@ -5,133 +5,41 @@ import Image from "next/image"
 import { X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const photos = [
-  // Existing categories
   {
-    src: "/images/gallery-1.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Portrait photograph with natural light and warm tones",
     title: "Golden Hour Portrait",
     category: "Portrait",
   },
   {
-    src: "/images/gallery-2.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Minimalist architecture with dramatic shadows",
     title: "Urban Geometry",
     category: "Architecture",
   },
   {
-    src: "/images/gallery-3.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Macro nature photography of morning dew",
     title: "Morning Dew",
     category: "Nature",
   },
   {
-    src: "/images/gallery-4.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Moody street photography with neon reflections",
     title: "City Nights",
     category: "Street",
   },
   {
-    src: "/images/gallery-5.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Aerial landscape of autumn forest with winding river",
     title: "Autumn From Above",
     category: "Landscape",
   },
   {
-    src: "/images/gallery-6.jpg",
+    src: "/images/gallery-1.jpeg",
     alt: "Long exposure ocean seascape at sunset",
     title: "Eternal Tide",
     category: "Seascape",
-  },
-  // Food Photography
-  {
-    src: "/images/food-1.jpg",
-    alt: "Beautifully plated gourmet dish with fresh herbs",
-    title: "Culinary Art",
-    category: "Food",
-  },
-  {
-    src: "/images/food-2.jpg",
-    alt: "Overhead flat lay breakfast spread with pastries and coffee",
-    title: "Morning Spread",
-    category: "Food",
-  },
-  // Product Photography
-  {
-    src: "/images/product-1.jpg",
-    alt: "Luxury perfume bottle with dramatic studio lighting",
-    title: "Refined Elegance",
-    category: "Product",
-  },
-  {
-    src: "/images/product-2.jpg",
-    alt: "Artisan ceramic pottery collection on linen background",
-    title: "Handcrafted Beauty",
-    category: "Product",
-  },
-  // Marriage / Wedding Photography
-  {
-    src: "/images/marriage-1.jpg",
-    alt: "Bride and groom walking hand in hand at golden hour",
-    title: "Together Forever",
-    category: "Marriage",
-  },
-  {
-    src: "/images/marriage-2.jpg",
-    alt: "Wedding rings resting on a bouquet of white roses",
-    title: "Sacred Vows",
-    category: "Marriage",
-  },
-  // Maternity Photography
-  {
-    src: "/images/maternity-1.jpg",
-    alt: "Expecting mother in flowing dress in a sunlit meadow",
-    title: "Radiant Glow",
-    category: "Maternity",
-  },
-  {
-    src: "/images/maternity-2.jpg",
-    alt: "Intimate maternity studio portrait with soft lighting",
-    title: "Tender Moments",
-    category: "Maternity",
-  },
-  // Family Photography
-  {
-    src: "/images/family-1.jpg",
-    alt: "Happy family walking together on a beach at sunset",
-    title: "Beach Stroll",
-    category: "Family",
-  },
-  {
-    src: "/images/family-2.jpg",
-    alt: "Parents playing with their child among autumn leaves",
-    title: "Autumn Joy",
-    category: "Family",
-  },
-  // Kids Photography
-  {
-    src: "/images/kids-1.jpg",
-    alt: "Child blowing dandelion seeds in a sunny field",
-    title: "Wishes in the Wind",
-    category: "Kids",
-  },
-  {
-    src: "/images/kids-2.jpg",
-    alt: "Children laughing and running through a flower garden",
-    title: "Pure Joy",
-    category: "Kids",
-  },
-  // Events Photography
-  {
-    src: "/images/events-1.jpg",
-    alt: "Elegant corporate gala dinner with beautiful decorations",
-    title: "Grand Gala",
-    category: "Events",
-  },
-  {
-    src: "/images/events-2.jpg",
-    alt: "Vibrant birthday celebration with balloons and confetti",
-    title: "Celebration Night",
-    category: "Events",
   },
 ]
 
@@ -197,7 +105,7 @@ export function Gallery() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredPhotos.map((photo, index) => (
             <button
-              key={photo.src}
+              key={`${photo.src}-${photo.title}-${index}`}
               onClick={() => openLightbox(index)}
               className="group relative aspect-[4/5] overflow-hidden bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label={`View ${photo.title}`}
