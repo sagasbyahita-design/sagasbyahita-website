@@ -26,7 +26,7 @@ export function Hero() {
           Every photo tells a saga.
         </p>
         <p className="mt-2 text-sm text-primary-foreground/60">
-          Copenhagen, poland
+          Copenhagen, Denmark
         </p>
       </div>
 
