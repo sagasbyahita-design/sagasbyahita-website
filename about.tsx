@@ -22,7 +22,7 @@ export function About() {
             About
           </p>
           <h2 className="font-serif text-3xl text-foreground sm:text-4xl md:text-5xl text-balance">
-            The story behind the lens
+            The story behind the lens - Checking changes
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">
             {
